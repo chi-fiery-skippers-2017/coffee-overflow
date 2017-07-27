@@ -1,5 +1,8 @@
+require "BCrypt"
+
 class User < ActiveRecord::Base
-  # Remember to create a migration!
+  include BCrypt
+
   has_many :questions, foreign_key: :author_id
   has_many :answers
   has_many :comments
@@ -8,9 +11,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   validates :username, :email, { presence: true, uniqueness: true }
-  validates :password_hash, presence: true
+  validates :password, presence: true
 
-  def generate_bcrypt
+  def password=(password)
     self.password_hash = BCrypt::Password.create(self.password)
   end
 

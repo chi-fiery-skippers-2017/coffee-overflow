@@ -5,10 +5,10 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    "AJAX HERE"
+    "You just created a new user"
   else
-    @errors = user.errors.full_messages
-  "You just created a new user"
+    @errors = @user.errors.full_messages
+    erb :'users/new'
   end
 end
 
