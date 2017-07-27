@@ -10,3 +10,8 @@
 
   <input type="submit" value="Create User">
 </form>
+<% if request.path_info == "/users"%>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+<% end %>

@@ -3,7 +3,13 @@ get '/users' do
 end
 
 post '/users' do
-
+  @user = User.new(params[:user])
+  if @user.save
+    "AJAX HERE"
+  else
+    @errors = user.errors.full_messages
+  "You just created a new user"
+  end
 end
 
 get '/users/new' do
