@@ -2,7 +2,7 @@
   <h1> <%= @question.title%> </h1>
   <p> <%= @question.content %> </p>
   <h6> Author:<%= @question.author.username%> </h6>
-  <h6> Votes: <%= @question.votes.value.sum %> </h6>
+
 </div>
 
 <div class="question_comments">
@@ -10,7 +10,7 @@
   <% @question.comments.each do |comment| %>
   <h3> <%= comment.author.username %> </h3>
   <p> <%= comment.content %> </p>
-  <h6> Votes: <% comment.votes.value.sum %> </h6>
+   <h6> Votes: </h6>
   <% end %>
   <div>
 
@@ -19,7 +19,7 @@
       <% @question.answers.each do |answer| %>
       <h3> <%= answer.author.username %> </h3>
       <p> <%= answer.comment.username %> <p>
-        <h6> <%= answer.votes.value.sum %> </h6>
+      <h6> Votes: </h6>
       </div>
 
 
@@ -28,7 +28,7 @@
         <% answer.comments.each do |comment| %>
         <h3> <%= comment.author.username %> </h3>
         <p> <%= comment.content %> </p>
-        <h6> Votes: <% comment.votes.value.sum %> </h6>
+        <h6> Votes: </h6>
         <% end %>
         <% end %>
         <div>
