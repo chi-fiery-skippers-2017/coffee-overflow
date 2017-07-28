@@ -23,3 +23,26 @@ end
   comment.commentable = Question.all.sample
   comment.save
 end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Question.all.sample
+  vote.save
+end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Comment.all.sample
+  vote.save
+end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Answer.all.sample
+  vote.save
+end
+
+
+
+
+

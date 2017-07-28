@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   # Remember to create a migration!
-  has_many :votes
+  has_many :votes, as: :votable
   belongs_to :author, class_name: 'User'
   belongs_to :commentable, polymorphic: true
 
