@@ -1,5 +1,3 @@
-require "BCrypt"
-
 class User < ActiveRecord::Base
   include BCrypt
 
@@ -8,19 +6,23 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :votes
 
-  attr_accessor :password
+  # attr_accessor :password
 
   validates :username, :email, { presence: true, uniqueness: true }
   validates :password, presence: true
 
-  def password=(password)
-    self.password_hash = BCrypt::Password.create(self.password)
+  def password
+    @password ||= Password.new(password_hash)
   end
 
-  def self.authenticate(email, password)
+  def password=(password)
+    @password = Password.create(password)
+    self.password_hash = @password
+  end
+
+  def self.authenticate(email, input_pw)
     user = User.find_by(email: email)
-    generated_hash = BCrypt::Password.new(user.password_hash)
-    generated_hash == password
+    password == Password.new(input_pw)
   end
 
 
