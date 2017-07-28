@@ -19,12 +19,14 @@ get '/users/new' do
   erb :'users/new'
 end
 
-get '/users/:id'
+get '/users/:id' do
   if logged_in?
     @user = User.find(session[:user_id])
+    erb :'/'
+    #Later change this to redirecting to user's profile page
   else
     # "This redirects to sessions/new"
-    @errors =
-    redirect 'sessions/new'
+    @errors = "You are presently not logged in"
+    redirect '/sessions/new'
   end
 end
