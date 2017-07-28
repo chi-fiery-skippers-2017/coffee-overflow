@@ -12,7 +12,12 @@ $(document).ready(function() {
     event.preventDefault();
     console.log('fingertrap');
     var answer = $(this).find('#answer').val();
-    var answerUser = User.findBy("id", "session[:user_id]");
+
+    // $.ajax({
+    //   url: "questions/:id/show",
+    //   method: "POST",
+    // })
+    // .done(function())
   })
 
 })
