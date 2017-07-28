@@ -2,25 +2,27 @@
   <h1> <%= @question.title%> </h1>
   <p> <%= @question.content %> </p>
   <h6> Author:<%= @question.author.username%> </h6>
-
+  <button id="add-question-comment-button">Add Comment</button>
+  <button id="add-answer-button">Add Answer </button>
 </div>
 
-<div class="question_comments">
+<div class="question-comments">
   <% if @question.comments.length > 0 %>
     <h2> Comments: </h2>
     <% @question.comments.each do |comment| %>
       <h3> <%= comment.author.username %> </h3>
       <p> <%= comment.content %> </p>
       <h6>Votes:
-      <% vote_counter = 0 %>
+      <% vote-counter = 0 %>
       <% comment.votes.each do |vote| %>
-        <% vote_counter += vote.value %>
+        <% vote-counter += vote.value %>
       <% end %>
-      <%= vote_counter %>
+      <%= vote-counter %>
       </h6>
 
     <% end %>
   <% end %>
+
   <div>
 
   <div class="answers">
@@ -28,12 +30,14 @@
       <h2> Answers: </h2>
       <% @question.answers.each do |answer| %>
         <h3> <%= answer.author.username %> </h3>
-        <p> <%= answer.content %> <p>
+        <p> <%= answer.content %> </p>
         <h6> Votes:  </h6>
+        <button id="add-answer-comment">Add Comment</button>
+
         </div>
 
 
-        <div class="answer_comments">
+        <div class="answer-comments">
         <% if answer.comments.length > 0 %>
           <h2> Comments: </h2>
           <% answer.comments.each do |comment| %>

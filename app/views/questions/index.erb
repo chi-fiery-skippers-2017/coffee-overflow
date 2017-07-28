@@ -3,7 +3,9 @@
 <% @questions.each do |question| %>
   <ul>
     <li>
-      <a href="/questions/<%= question.id %>"><%= question.title %></a>
-      <a href="/users/<%= question.author_id %>"><%= @user.username %></a>
+      <a href="/questions/<%= question.id %>/show"><%= question.title %></a>
+      <a href="/users/<%= question.author_id %>"><%= question.author.username %></a>
     </li>
   </ul>
+<% end %>
+<button id="add-question-button">Add Question</button>
