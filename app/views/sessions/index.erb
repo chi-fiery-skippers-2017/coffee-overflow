@@ -7,8 +7,10 @@
     <input type="text" name="password">
     <input type='submit' value='log me in'>
   </form>
-  <% @errors.each do |error|%>
-    <li><%= error %></li>
+  <% if @errors %>
+    <% @errors.each do |error|%>
+      <li><%= error %></li>
+    <% end %>
   <% end %>
 <% else %>
 <p>You are already logged in!</p>

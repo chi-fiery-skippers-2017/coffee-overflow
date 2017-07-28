@@ -1,4 +1,5 @@
 get '/sessions/new' do
+  @errors = nil
   erb :'sessions/index'
 end
 
