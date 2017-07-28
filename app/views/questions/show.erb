@@ -4,6 +4,10 @@
   <h6> Author:<%= @question.author.username%> </h6>
   <button id="add-question-comment-button">Add Comment</button>
   <button id="add-answer-button">Add Answer </button>
+  <form id="new-answer-form" class="hidden">
+    <input type="text" id="answer" name="answer" placeholder="Your answer here">
+    <button type="submit">Post</button>
+  </form>
 </div>
 
 <div class="question-comments">
