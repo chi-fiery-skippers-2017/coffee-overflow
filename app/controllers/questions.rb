@@ -1,6 +1,5 @@
 get '/questions/new' do
   if request.xhr?
-    # 'so cool'
     erb :'questions/_new', layout: false
   end
 end
