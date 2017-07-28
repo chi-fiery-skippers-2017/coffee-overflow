@@ -1,0 +1,49 @@
+<div class="question">
+  <h1> <%= @question.title%> </h1>
+  <p> <%= @question.content %> </p>
+  <h6> Author:<%= @question.author.username%> </h6>
+
+</div>
+
+<div class="question_comments">
+  <% if @question.comments.length > 0 %>
+  <h2> Comments: </h2>
+  <% @question.comments.each do |comment| %>
+  <h3> <%= comment.author.username %> </h3>
+  <p> <%= comment.content %> </p>
+   <h6> Votes: </h6>
+  <% end %>
+  <% end %>
+  <div>
+
+  <div class="answers">
+    <h2> Answers: </h2>
+    <% @question.answers.each do |answer| %>
+      <h3> <%= answer.author.username %> </h3>
+      <p> <%= answer.content %> <p>
+      <h6> Votes: </h6>
+      </div>
+
+
+      <div class="answer_comments">
+        <% if answer.comments.length > 0 %>
+          <h2> Comments: </h2>
+          <% answer.comments.each do |comment| %>
+            <h3> <%= comment.author.username %> </h3>
+            <p> <%= comment.content %> </p>
+        <% end %>
+          <h6> Votes: </h6>
+          <% end %>
+      <% end %>
+        <div>
+
+
+
+
+
+
+
+
+
+
+
