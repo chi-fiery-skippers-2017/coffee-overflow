@@ -15,8 +15,6 @@ post '/users' do
   end
 end
 
-
-
 get '/users/new' do
   erb :'users/new'
 end
