@@ -1,0 +1,17 @@
+<form id="new_user_form" action="/users" method="post">
+  <label for="username">Username:</label>
+  <input name="user[username]" type="text">
+
+  <label for="email">Email:</label>
+  <input name="user[email]" type="text">
+
+  <label for="password">Password:</label>
+  <input name="user[password]" type="text">
+
+  <input type="submit" value="Create User">
+</form>
+<% if request.path_info == "/users"%>
+  <% @errors.each do |error| %>
+  <li><%= error %></li>
+  <% end %>
+<% end %>
