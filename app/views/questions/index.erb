@@ -8,7 +8,9 @@
     </li>
   </ul>
 <% end %>
-<button id="add-question-button">Add Question</button>
 
+<%if logged_in? %>
+  <button id="add-question-button">Ask Question</button>
+<% end %>
 <!-- place your response here using jquery -->
 

@@ -4,9 +4,16 @@ get '/questions/new' do
   end
 end
 
+post '/questions' do
+
+
+end
+
 
 get '/questions/:id/show' do
   @question = Question.find_by(id: params[:id])
   erb :'questions/show'
 end
+
+
 
