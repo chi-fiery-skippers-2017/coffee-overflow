@@ -13,11 +13,11 @@
       <h3> <%= comment.author.username %> </h3>
       <p> <%= comment.content %> </p>
       <h6>Votes:
-      <% vote-counter = 0 %>
+      <% vote_counter = 0 %>
       <% comment.votes.each do |vote| %>
-        <% vote-counter += vote.value %>
+        <% vote_counter += vote.value %>
       <% end %>
-      <%= vote-counter %>
+      <%= vote_counter %>
       </h6>
 
     <% end %>
