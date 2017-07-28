@@ -13,5 +13,13 @@ end
 end
 
 60.times do
-  Comment.create!(content: Faker::ChuckNorris.fact, author_id: rand(1..10), commentable_id: rand(1..10), commentable_type: ['question', 'answer'].sample)
+  comment = Comment.new(content: Faker::ChuckNorris.fact, author_id: rand(1..10))
+  comment.commentable = Answer.all.sample
+  comment.save
+end
+
+60.times do
+  comment = Comment.new(content: Faker::ChuckNorris.fact, author_id: rand(1..10))
+  comment.commentable = Question.all.sample
+  comment.save
 end

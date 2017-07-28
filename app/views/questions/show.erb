@@ -20,7 +20,6 @@
     <% if @question.answers.length > 0 %>
       <h2> Answers: </h2>
       <% @question.answers.each do |answer| %>
-        <p><%= answer %></p>
         <h3> <%= answer.author.username %> </h3>
         <p> <%= answer.content %> <p>
         <h6> Votes: </h6>
