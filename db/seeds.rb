@@ -13,5 +13,36 @@ end
 end
 
 60.times do
-  Comment.create!(content: Faker::ChuckNorris.fact, author_id: rand(1..10), commentable_id: rand(1..10), commentable_type: ['question', 'answer'].sample)
+  comment = Comment.new(content: Faker::ChuckNorris.fact, author_id: rand(1..10))
+  comment.commentable = Answer.all.sample
+  comment.save
 end
+
+60.times do
+  comment = Comment.new(content: Faker::ChuckNorris.fact, author_id: rand(1..10))
+  comment.commentable = Question.all.sample
+  comment.save
+end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Question.all.sample
+  vote.save
+end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Comment.all.sample
+  vote.save
+end
+
+50.times do
+  vote = Vote.new(voter_id: User.all.sample.id, value: [-1, 1].sample)
+  vote.votable = Answer.all.sample
+  vote.save
+end
+
+
+
+
+
