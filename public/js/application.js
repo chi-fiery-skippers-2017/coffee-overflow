@@ -11,5 +11,11 @@ $(document).ready(function() {
     })
   });
 
+  $('body').on('submit', 'form', function(){
+      event.preventDefault();
+      console.log($(this));
+  });
+
+  console.log($('#question-list'));
 
 });

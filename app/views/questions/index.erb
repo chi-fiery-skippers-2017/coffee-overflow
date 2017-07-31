@@ -1,7 +1,7 @@
 <h1>Hydro Coffee Overflow</h1>
 
 <% @questions.each do |question| %>
-  <ul>
+  <ul id="question-list">
     <li>
       <a href="/questions/<%= question.id %>/show"><%= question.title %></a>
       <a href="/users/<%= question.author_id %>"><%= question.author.username %></a>
