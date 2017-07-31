@@ -21,9 +21,10 @@
       </h6>
 
     <% end %>
+      </div>
   <% end %>
 
-  <div>
+
 
   <div class="answers">
     <% if @question.answers.length > 0 %>
@@ -34,7 +35,8 @@
         <h6> Votes:  </h6>
         <button id="add-answer-comment">Add Comment</button>
 
-        </div>
+
+
 
 
         <div class="answer-comments">
@@ -45,9 +47,11 @@
             <p> <%= comment.content %> </p>
           <% end %>
           <h6> Votes: </h6>
+         </div>
         <% end %>
       <% end %>
-    <div>
+    </div>
+
     <% end %>
 
 
