@@ -1,7 +1,7 @@
 require 'faker'
 
 10.times do
-  User.create!(username: Faker::Pokemon.name, password_hash: 'password', email: Faker::Internet.email)
+  User.create!(username: Faker::Pokemon.name, password: 'password', email: Faker::Internet.email)
 end
 
 10.times do
