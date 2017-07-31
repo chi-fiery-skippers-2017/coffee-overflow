@@ -10,7 +10,7 @@ post '/questions' do
 
   if @question.save
     if request.xhr?
-      erb :'questions/_post_questions', layout: false, locals: {question: @question}
+      erb :'questions/_post_question', layout: false, locals: {question: @question}
     end
   end
 end
